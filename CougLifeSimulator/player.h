@@ -2,6 +2,7 @@
 
 #include <iostream>;
 #include <ctime>;
+#include "Semester.h"
 
 //Difficulty multiplier and luck value
 class difficulty
@@ -26,7 +27,8 @@ private:
 };
 
 //Player traits and difficulty wrapper
-class player
+class player:
+	public Semester
 {
 public:
 	player();

@@ -14,3 +14,8 @@ gameMain::gameMain()
 gameMain::~gameMain()
 {
 }
+
+void gameMain::gameLoop()
+{
+	cout << "Hello, welcome to Washington State University. What's your major?" << endl;
+}
