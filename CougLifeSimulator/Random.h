@@ -18,12 +18,11 @@ public:
 	~RandomLifeEvents(); //deconstructor
 	RandomLifeEvents(RandomLifeEvents &copy); //copy constructor
 
+	int randomLifeEventGenerator();
+	int ChoiceGenerator();
+
 	//getters/setters 
-	int getLevel();
-	int getLuck();
 	bool getLifeEvent();
-	void setLevel(int level);
-	void setLuck(int luck);
 	void setLifeEvent(bool eventType);
 
 private:
