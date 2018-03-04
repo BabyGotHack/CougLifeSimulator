@@ -9,6 +9,9 @@ class difficulty
 public:
 	difficulty();
 	~difficulty();
+	int getluck();
+	int getMultiplier();
+	void setDifficult(int difficulty);
 private:
 	int luck;
 	int multiplier;
@@ -18,14 +21,16 @@ private:
 class status
 {
 public:
-
+	status();
+	~status();
+	void setStress(int event, int difficulty);
 private:
 	int stress;
 	int sanity;
 	int sleep;
 };
 
-//Player traits and difficulty wrapper
+//Player status and difficulty wrapper
 class player
 {
 public:
