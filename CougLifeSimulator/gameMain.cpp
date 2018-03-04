@@ -28,6 +28,11 @@ void gameMain::run()
 	hud3.init(.5f, .2f, 0.0f, -1.0f);
 	hud4.init(.5f, .2f, .5f, -1.0f);
 	largeOption.init(1.8f, 1.2f, -.9f, -.7f);
+	option1.init(1.8f, .4f, -.9f, .1f);
+	option2.init(1.8f, .4f, -.9f, -.3f);
+	option3.init(1.8f, .4f, -.9f, -.7f);
+	text.loadFont(_renderer, "res/arial.ttf", 100, "Lol what I do", { 255,0,0,255 });
+	
 	gameLoop();
 }
 
@@ -36,7 +41,7 @@ void gameMain::initGame()
 	playing = true;
 	mScreenSizeX = 400;
 	mScreenSizeY = 400;
-	window = SDL_CreateWindow("Cougar Life Simulator", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, mScreenSizeX, mScreenSizeY, SDL_WINDOW_OPENGL);
+	window = SDL_CreateWindow("Pullman Trail", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, mScreenSizeX, mScreenSizeY, SDL_WINDOW_OPENGL);
 
 	if (window == nullptr) {
 		helper("window did not open properly");
@@ -58,13 +63,22 @@ void gameMain::initGame()
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
 	glClearColor(1.0f, 1.0f, 0.0f, 1.0);
+
+	_renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	if (!_renderer) {
+		helper("failed to create render");
+	}
+
+	if (TTF_Init() == -1) {
+		helper("failed to initialize ttf");
+	}
 	
 }
 
 void gameMain::gameLoop()
 {
 	while (playing) {
-
+		
 		drawGame();
 		processInput();
 	}
@@ -97,11 +111,15 @@ void gameMain::drawGame()
 	title.draw(.3f,.7f,.70000f);
 	_event.draw(.5f, 1.0f, .5f);
 
-	hud1.draw((rand() % 255) / (double)255, (rand() % 255) / (double)255, (rand() % 255) / (double)255);
+	/*hud1.draw((rand() % 255) / (double)255, (rand() % 255) / (double)255, (rand() % 255) / (double)255);
 	hud2.draw((rand() % 255) / (double)255, (rand() % 255) / (double)255, (rand() % 255) / (double)255);
 	hud3.draw((rand() % 255) / (double)255, (rand() % 255) / (double)255, (rand() % 255) / (double)255);
 	hud4.draw((rand() % 255) / (double)255, (rand() % 255) / (double)255, (rand() % 255) / (double)255);
-	largeOption.draw((rand() % 255) / (double)255, (rand() % 255) / (double)255, (rand() % 255) / (double)255);
+	largeOption.draw((rand() % 255) / (double)255, (rand() % 255) / (double)255, (rand() % 255) / (double)255);*/
+	option1.draw(1, 0, 0);
+	option2.draw(0, 1, 0);
+	option3.draw(0, 0, 1);
+	text.display(100,100,_renderer);
 	SDL_GL_SwapWindow(window);
 }
 

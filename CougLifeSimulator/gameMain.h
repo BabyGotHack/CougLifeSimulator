@@ -6,6 +6,8 @@
 #include <iostream>
 #include <string>
 #include "Sprite.h"
+#include <SDL_ttf.h>
+#include "Text.h"
 
 class gameMain
 {
@@ -15,6 +17,7 @@ public:
 
 
 	void run();
+	
 
 private: 
 	
@@ -26,15 +29,17 @@ private:
 
 	void helper(std::string message);
 
+	//Text text;
+
 	SDL_Window* window;
 
 	SDL_Event evnt;
 	player _player;
 	bool playing;
-
+	SDL_Renderer *_renderer;
 	int _mouseX, _mouseY;
 	int mScreenSizeX, mScreenSizeY;
-
+	Text text;
 	Sprite title, _event, option1, option2, option3, hud1, hud2, hud3, hud4, largeOption;
 };
 

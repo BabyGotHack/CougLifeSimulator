@@ -68,7 +68,7 @@ int ChoiceGenerator()
 	case 1: cout << "Go to Class 1. No and 2. Yes" << endl;
 		cin >> choice;
 		switch (choice)
-		{		
+		{
 		case 1:
 			return -3;
 			break;
@@ -140,14 +140,15 @@ int ChoiceGenerator()
 			break;
 		}
 		break;
+	}
 }
 
 
 
-//bool RandomLifeEvents::getLifeEvent()
-//{
-//	return mLifeEvent;
-//}
+bool RandomLifeEvents::getLifeEvent()
+{
+	return mLifeEvent;
+}
 
 void RandomLifeEvents::setLifeEvent(bool eventType)
 {
