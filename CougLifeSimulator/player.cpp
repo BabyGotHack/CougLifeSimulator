@@ -8,6 +8,18 @@ player::player()
 
 }
 
+//set level
+void player::setDifficulty(int level)
+{
+	this->d_player.setDifficult(level);
+}
+
+//puts the stress into
+void player::setStess(int level, int event)
+{
+	this->s_player.setStress(event, level);
+}
+
 //Player Deconstructor
 player::~player()
 {
@@ -40,6 +52,12 @@ int difficulty::getMultiplier()
 void difficulty::setDifficult(int difficulty)
 {
 	this->multiplier = difficulty;
+}
+
+//sets the stress
+void difficulty::setStress(int stress, int difficulty)
+{
+	this->setStress(stress, difficulty);
 }
 
 //Difficulty Deconstructor

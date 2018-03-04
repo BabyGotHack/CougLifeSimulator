@@ -14,3 +14,25 @@ gameMain::gameMain()
 gameMain::~gameMain()
 {
 }
+
+void gameMain::gameLoop()
+{
+	player student;
+
+	srand(time(NULL));
+
+	int difficulty, stress;
+
+	cout << "What major are you?" << endl;
+	cout << "1. Communications Major (easy)" << endl;
+	cout << "2. Psychology Major (medium)" << endl;
+	cout << "3. Engineering Major (hard)" << endl;
+	cin >> difficulty;
+
+	student.setDifficulty(difficulty);
+
+	stress = this->temp.randomLifeEventGenerator();
+
+	student.setStess(difficulty, stress);
+
+}
