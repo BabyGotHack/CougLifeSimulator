@@ -1,12 +1,12 @@
-#include <SDL.h>
-#pragma once
+#include "gameMain.h"
 
+
+#include <iostream>
 int main(int argc, char* argv[]) {
 
-	SDL_Init(SDL_INIT_EVERYTHING);
-		
-
-
+	
+	gameMain mainGame;
+	
 
 	return 0;
-}
+} 
