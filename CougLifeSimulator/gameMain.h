@@ -11,14 +11,22 @@ public:
 	~gameMain();
 
 
+	void run();
+
 private: 
+	
 
 	void initGame();
 	void gameLoop();
+	void processInput();
 
 
 
 	SDL_Window* window;
 
+	player _player;
+	bool playing;
+
+	int mScreenSizeX, mScreenSizeY;
 };
 
