@@ -1,11 +1,12 @@
-#include <SDL.h>
-#include <GL\glew.h>
+#include "gameMain.h"
 
+
+#include <iostream>
 int main(int argc, char* argv[]) {
 
-	SDL_Init(SDL_INIT_EVERYTHING);
+	
+	gameMain mainGame;
+	
 
-	for (int i = 1; i > 0; )
-	{ }
 	return 0;
 } 
