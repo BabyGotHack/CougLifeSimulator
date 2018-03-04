@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include <GL\glew.h>
 #include "player.h"
+#include "Random.h"
 
 class gameMain
 {
@@ -11,22 +12,15 @@ public:
 	~gameMain();
 
 
-	void run();
-
 private: 
-	
 
 	void initGame();
 	void gameLoop();
-	void processInput();
-
+	
+	RandomLifeEvents temp;
 
 
 	SDL_Window* window;
 
-	player _player;
-	bool playing;
-
-	int mScreenSizeX, mScreenSizeY;
 };
 
