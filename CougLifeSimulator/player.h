@@ -1,7 +1,7 @@
 #pragma once
 
-#include <iostream>;
-#include <ctime>;
+#include <iostream>
+#include <ctime>
 #include "Semester.h"
 
 using std::cin;
